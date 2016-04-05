@@ -1,0 +1,30 @@
+<div class="row title">
+  <div class="col-sm-12">	 
+    <h3 id="ser_h">Контакты</h3>
+  </div>
+</div>
+<div class="container">
+
+ <div class="row">
+    <div class="col-sm-6">
+      <h4>Оставить сообщение</h4>
+      <div class="form-group">
+ 	   <!-- <label for="usr" >Тема</label>
+ 	   <input type="text"  id="compose-subject" class="form-control"/>  -->
+	   <label for="email" >Email</label>
+	   <input type="text" id="compose-from" class="form-control"/>
+       <label for="message" >Сообщение</label>
+       <textarea class="form-control" rows="5" id="compose-message"></textarea>
+	   <button class="btn btn-warning btn-md btn-send" id="send-button">Отправить</button>
+ 	 </div>
+	</div>	 	
+ </div>
+</div>
+
+<script>
+$("#send-button").click(function () {
+	sendEmail();
+});
+sr_slide();
+</script>
+	    

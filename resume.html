@@ -1,0 +1,57 @@
+<div class="row title">
+  <div class="col-sm-12">	 
+    <h3 id="ser_h">Резюме</h3>
+  </div>
+</div>
+
+<div class="row">	
+  <div class="col-sm-8" id="container_resume">
+  </div>
+  <div class="col-sm-4">
+	   <h4>Мои Навыки</h4>
+    <div class ="row">	
+      <div class="col-sm-12 col_my_skills">
+   	   JavaScript
+   	  </div>
+   	  <div class="col-sm-12 col_my_skills" >
+   	    Jquery
+   	  </div>
+   	  <div class="col-sm-12 col_my_skills">
+   	    HTML,CSS
+   	  </div>
+   	  <div class="col-sm-12 col_my_skills">
+   	    Bootstrap
+   	  </div>
+     </div>
+   </div>	  
+</div>  		 
+ <script>
+function populate_resume() {
+	$.ajax({
+	  url: "data/resume.json",
+		async:true
+	 })
+	.done(function(data){
+        console.log("done");	
+		var d=$.parseJSON(data);
+		var s="";
+        var count=0;
+		for(var i = 0 ; i < d.length ; i ++ ) {
+			if(count == 0) {
+				s+='<h4>Опыт работы</h4>';
+				count++;
+			}
+	       s+='<div class="row"> <div class="col-sm-2" id="data"><h5>'+d[i].data+
+			'</h5></div><div class="col-sm-10" id="info"><h3 class="prof">'+d[i].prof+'</h3> <h4>'+d[i].company+'</h4><h5>'+d[i].comment+'</h5></div></div>';
+		 
+	     }
+		
+	   $("#container_resume").html(s);
+      
+	   //animation();	 
+	});	
+	console.log("populate");
+}
+populate_resume();
+sr_slide();	  	  
+</script>

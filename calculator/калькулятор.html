@@ -1,0 +1,75 @@
+=<!DOCTYPE HTML>
+<html>
+<meta charset="utf-8">
+<body>
+<script>
+	var prv;
+	function kol() {
+		try{
+		var expr=kl2.value;
+		kl2.value=eval(expr);
+	} catch(error){
+		alert(error);
+	}
+	} 
+	function is_empty(s) {
+		var i=0;
+		while (i<s.length){
+			var c=s[i];
+			if(c !=' ' ) {
+				return false;
+			}
+			i++;
+		}
+		return true;
+	}
+		function win(val) {
+			if((val == "+") && (kl1.value.length  == 0)) {
+				return;
+			}
+			else if (val == "+" && (kl1.value.length > 0)){
+			    if(is_empty(kl2.value)) {
+				   prv = kl2.value;
+				   kl2.value = kl1.value + " + ";
+				   kl1.value = "";
+			    }
+			    else {   
+				    kl2.value = kl2.value + "+" + kl1.value;
+				    kl1.value="";
+			    }
+			}
+			else if(val == "=") {
+				kl2.value += kl1.value;
+				kol();
+				kl1.value = "";
+			}
+			else  {
+				kl1.value += val; //kl1.value = kl1.value + val;
+			}
+			}
+		</script>
+<form/>
+<style>
+	p {color:red}
+	</style>
+	
+<p>введите выражение</p>
+<input id="kl1" type="text"/>
+<input type="button" value="вычеслить" onclick="kol();"/>
+<input type= "reset" color="red" value="delete"/>   
+
+
+
+
+<input id="b1" type="button" value="8"  onclick="win(8);" />
+<input id="b2" type="button" value="9"  onclick="win(9);" />
+
+<input id="b3" type="button" value="+"  onclick="win('+');" />
+<input id="b3" type="button" value="="  onclick='win("=");' />
+
+<br/>
+ <hr/>
+результат<textarea  id ="kl2" type="text" value="" rows="15" cols="60">  </textarea>
+	<button onclick="kol();"> button 2 </button>
+
+</html>

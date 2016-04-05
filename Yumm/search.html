@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Yumm</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="stylesheet" href="css/bootstrap.min.css">
+                <script src="js/jquery.min.js"></script>
+                <script src="js/bootstrap.min.js"></script>
+			<script src="js/jquery-ui.js"></script>
+			<script src="js/yumm.js"></script>
+			 <link rel="stylesheet" href="css/main.css">
+		<style> html, body{height: 100%;};</style>	
+	</head>
+<body onload="init()">
+    <nav class="navbar navbar-default"  id="navbar-search">
+	  <div class="container-fluid">
+	    <div class="navbar-header">
+	      <a class="navbar-brand" style="position: relative;bottom: 10px;left: 16%;"> <img src="logofinished_yellow.png" style="height: 45px;width: 53px;"/></a>
+		  <a class="navbar-brand" href="#" style="color: #ffd31c;font-size:20px;padding-right: 42px;padding-left: 73px;">Yumm</a>			  
+	    </div>
+	    <div>
+		  <ul class="nav navbar-nav">
+		    <li class="dropdown">
+			  <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color:#f3f3f3;font-size: 18px;font-family:Roboto Light">Киев
+			  <span class="caret" style="color:#fd8a49"></span></a>
+			  <ul class="dropdown-menu">
+			    <li><a href="#">Page 1-1</a></li>
+				<li><a href="#">Page 1-2</a></li>
+				<li><a href="#">Page 1-3</a></li> 
+			  </ul>
+			</li>  
+		     </ul> 
+		  <ul class="nav navbar-nav navbar-right" style="padding-right: 17%;">
+		    <li style="margin-right:20px"><a href="#"><button type="button" class="btn btn-warning" id="startFoodButton-2">Начать готовить</button></a></li>
+		    <li><a href="#"><button type="button" class="btn btn-default" id="enterButton">Вход</button></a></li>
+		  </ul>
+	    </div>
+	   </div>
+    </nav>
+	<div class="container-fluid" style="height:88%;padding-left: 0%; position:relative;bottom:1.8%;;">
+      <div class="row-fluid" style="height:100%;">
+        <div class="col-sm-3" id="leftContainer">
+			<div class="row" style="height: 5%;">
+				<table style="width:100%;">
+					<tr>
+						<td style="width:5%">
+							&nbsp;
+						</td>
+						<td style="width:6%;padding-left: 2%;background-color: #f3f3f3;    border-bottom-left-radius: 5px;border-top-left-radius:5px;">
+							 <span class="glyphicon glyphicon-search" style="color: #dcdcdc;background-color: #f3f3f3"></span>
+						</td>
+						<td style="width:79%;height:100%">
+						  <input type="text"   placeholder="Хочу заказать..."style="background-color: #f3f3f3;font-family:Roboto Light;border:0px;width:90%;line-height: 33px;border-top-right-radius: 5px;border-bottom-right-radius: 5px;"/>
+						</td>
+						<td style="width:10%;">
+						  <img src="slider.png" style="width: 58%;"/>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<!--
+		 <div class="row" style="padding-left: 14px;height:4%">
+			 <div class="col-sm-1" style="background-color: #f3f3f3">
+				  <span class="glyphicon glyphicon-search" style="color: #dcdcdc;float:left;font-size: 16px;top: 11px;right: 7px; "></span>
+			 </div>
+		    <div class="col-sm-8" style="background-color: #f3f3f3;border-radius: 5px;height:90%">
+	                 
+				  <input type="text"   placeholder="Хочу заказать..."style="background-color: #f3f3f3;font-family:Roboto Light;border:0px;width:70%;height: 80%;"/>
+				 </div>
+				 <div class="col-sm-1"  style="position: relative;top: 3px;right: 10px;">  
+			   <img src="slider.png"/>
+
+		    </div>
+		 </div>
+				-->
+			<div class="row left-row">
+				<div class="col-sm-12" style="color:#bfbfbf;font-family:Roboto Light;text-align: -webkit-center;font-size: 17px;">
+					Дата
+				</div>
+			</div>
+			<div class="row left-row" style="height:5%;">
+             <table style="width:100%;height:100%">
+				 <tr >
+					 <td style="width:5%">
+						 &nbsp;
+					 </td>
+					 <td style="background-color:#f3f3f3;width:44%;text-align:center;font-family:Roboto Light;font-size: 17px;color: #bfbfbf">
+						 13 декабря
+					 </td>
+					 <td style="width:5%">
+						 &nbsp;
+					 </td>
+					 <td style="background-color:#f3f3f3;width:44%;text-align:center;font-family:Roboto Light;font-size: 17px;color: #fd8a49">
+						 Cрочно
+					 </td>
+					 <td style="width:5%">
+						 &nbsp;
+					 </td>
+				 </tr>
+			 </table>
+			</div>
+			<!--
+				<div class="row left-row" style="height:8%;">
+				
+				<div class="col-sm-5" style="background-color:#f3f3f3;text-align: -webkit-center;font-family:Roboto Light;font-size: 17px;color: #bfbfbf;height: 58%;">
+				    <div style="padding-top: 4px;">13 декабря</div>
+		              
+				</div>
+				
+				<div class="col-sm-5" style="background-color:#f3f3f3;color:#fd8a49;text-align: -webkit-center;font-family:Roboto Light;font-size: 17px;height: 58%;">
+					<div style="padding-top: 4px;">Срочно</div>
+				</div>
+			</div> 
+				-->
+			<div class="row left-row">
+				<div class="col-sm-12" style="color:#bfbfbf;font-family:Roboto Light;text-align: -webkit-center;font-size: 17px;">
+					Цена
+				</div>	
+			</div>
+			<div class="row left-row" style="height:6%">
+			  <div class="col-sm-12" style="height:100%">
+				<div id="slider" style="width:97%;height:4px;background-color:white">					
+				</div>
+				<input type="text" id="minCost" style="border:0px;width: 13%;background-color:#f8f8f8;position:relative;top: 7px;" value="";/>
+				<input type="text" id="maxCost" style="border:0px;width: 13%;background-color:#f8f8f8;position:relative;left:75%;top: 7px;%" value="";/>	
+			  </div>	
+			</div>
+			<div class="row left-row">
+			  <div class="col-sm-12" style="color:#fd8a49;font-family:Roboto Light;text-align: -webkit-center;">
+				  Дополнительные фильтры
+			  </div>
+		    </div>
+			<div class="row left-row">
+			  <div class="col-sm-12" style="color:#bfbfbf;font-family:Roboto Light;text-align: -webkit-center;">
+				  Кухня
+			  </div>
+		    </div>
+			<div class="row left-row">
+			  <div class="col-sm-12">
+  			    <button class="btn btn-defult dropdown-toggle left-dropdown" type="button" data-toggle="dropdown" style="color:#fd8a49;width:100%;height29px;background-color:#f3f3f3">итальянская
+  			    <span class="caret" id="span-caret"></span></button>
+  			    <ul class="dropdown-menu dropdown-menu-right">
+  			      <li><a href="#">первтое</a></li>
+  			      <li><a href="#">втрое</a></li>
+  			      <li><a href="#">третье</a></li> 
+  			    </ul>
+			  </div>
+		    </div>
+			<div class="row left-row">
+			  <div class="col-sm-12" style="color:#bfbfbf;font-family:Roboto Light;text-align: -webkit-center;">
+				  Особенности
+			  </div>
+		    </div>
+			<div class="row left-row">
+			  <div class="col-sm-12">
+  			    <button class="btn btn-defult dropdown-toggle left-dropdown" type="button" data-toggle="dropdown" style="color:#bfbfbf;width:100%;height29px;background-color:#f3f3f3">не выбрано
+  			    <span class="caret" id="span-caret"></span></button>
+  			    <ul class="dropdown-menu dropdown-menu-right">
+  			      <li><a href="#">первтое</a></li>
+  			      <li><a href="#">втрое</a></li>
+  			      <li><a href="#">третье</a></li> 
+  			    </ul>
+			  </div>
+		    </div>
+			<div class="row left-row"> 
+			  <div class="col-sm-12" style="color:#bfbfbf;font-family:Roboto Light;text-align: -webkit-center;">
+				  Аллергия
+			  </div>
+		    </div>
+			<div class="row left-row">
+			  <div class="col-sm-12" >
+			    <button class="btn btn-defult dropdown-toggle left-dropdown" type="button" data-toggle="dropdown" style="color:#fd8a49;width:100%;height29px;background-color:#f3f3f3">мучное
+			    <span class="caret" id="span-caret"></span></button>
+			    <ul class="dropdown-menu dropdown-menu-right">
+			      <li><a href="#">первтое</a></li>
+			      <li><a href="#">втрое</a></li>
+			      <li><a href="#">третье</a></li> 
+			    </ul>
+			  </div>
+		    </div>
+			<div class="row left-row" style="padding-top: 5%;text-align: center;">
+			  <div class="col-sm-12" >
+			   <button type="button" class="btn btn-warning " id="bottomSearch">Поиск</button>
+			  </div>
+		    </div>					  		 
+		</div>
+        <div class="col-sm-9" id="rightContainer">
+		  <div class="row" style="height:33%">
+		    <div class="col-sm-4 right-column" id="1-col">
+				
+				<div class="row row-right">
+					<div class="col-sm-2  cirle-left-top">
+				      <center>
+					    <div class="cirle-left-second">
+						  <div  class="price">13$
+						  </div>
+					    </div>
+				      </center>
+				   </div>
+				   
+				   <div class="col-sm-8">
+				   </div>
+					<div class="col-sm-2 col-cirle">
+					<center class="top-center">
+						<div  class="div-cirle-top">
+							<span class="glyphicon glyphicon-flash class-flash">
+							</span>
+						</div>
+					  </center>
+					</div>	
+				</div>
+				<div class="row" style="height:30%;background-color:#ffffff">
+					<div class="col-sm-10" style="font-family:Roboto">
+						<div class"row" style="padding-top:4%;">
+							<b>Салат</b>
+						</div>
+						<div class"row" style="padding-top:3%">
+                          Киев Украина
+						</div>	
+					</div>
+					<div class="col-sm-2" style="height:100%;padding-top:4%;">
+						<center>
+						<div   class="div-cirle-bottom">
+						</div>
+					</center>	
+					</div>
+				</div>
+			</div>
+			
+		    <div class="col-sm-4 right-column" id="2-col">
+					<div class="row row-right">
+						<div class="col-sm-2 cirle-left-top">
+					      <center>
+						    <div class="cirle-left-second">
+							  <div class="price">14$
+							  </div>
+						    </div>
+					      </center >
+					   </div>
+					   <div class="col-sm-8">
+					   </div>
+						<div class="col-sm-2 col-cirle">
+						<center class="top-center">
+							<div class="div-cirle-top">
+								<span class="glyphicon glyphicon-flash class-flash">
+								</span>
+							</div>
+						  </center>
+						</div>	
+					</div>
+					<div class="row" style="height:30%;background-color:#ffffff">
+						<div class="col-sm-10" style="font-family:Roboto">
+							<div class"row" style="padding-top:4%;">
+								<b>Салат</b>
+							</div>
+							<div class"row" style="padding-top:3%">
+	                          Киев Украина
+							</div>	
+						</div>
+						<div class="col-sm-2" style="height:100%;padding-top:4%;">
+							<center>
+							<div class="div-cirle-bottom">
+							</div>
+						</center>	
+						</div>
+					</div>
+			</div>
+		    <div class="col-sm-4 right-column" id="3-col" >
+					<div class="row row row-right">
+						<div class="col-sm-2 cirle-left-top">
+					      <center>
+						    <div class="cirle-left-second">
+							  <div class="price">11$
+							  </div>
+						    </div>
+					      </center>
+					   </div>
+				   
+					   <div class="col-sm-8">
+					   </div>
+						<div class="col-sm-2 col-cirle">
+						<center class="top-center">
+							<div class="div-cirle-top">
+								<span class="glyphicon glyphicon-flash class-flash">
+								</span>
+							</div>
+						  </center>
+						</div>	
+					</div>
+					<div class="row" style="height:30%;background-color:#ffffff">
+						<div class="col-sm-10" style="font-family:Roboto">
+							<div class"row" style="padding-top:4%;">
+								<b>Салат</b>
+							</div>
+							<div class"row" style="padding-top:3%">
+	                          Киев Украина
+							</div>	
+						</div>
+						<div class="col-sm-2" style="height:100%;padding-top:4%;">
+							<center>
+							<div class="div-cirle-bottom">
+							</div>
+						</center>	
+						</div>
+					</div>
+			</div>
+	     </div>
+		  <div class="row" style="height:33%">
+		    <div class="col-sm-4 right-column" id="4-col">
+			<div class="row row row-right">
+				<div class="col-sm-2 cirle-left-top">
+			      <center>
+				    <div class="cirle-left-second">
+					  <div class="price">10$
+					  </div>
+				    </div>
+			      </center>
+			   </div>
+			   
+			   <div class="col-sm-8">
+			   </div>
+				<div class="col-sm-2 col-cirle">
+				<center class="top-center">
+					<div class="div-cirle-top">
+						<span class="glyphicon glyphicon-flash class-flash">
+						</span>
+					</div>
+				  </center>
+				</div>	
+			</div>
+			<div class="row" style="height:30%;background-color:#ffffff">
+				<div class="col-sm-10" style="font-family:Roboto">
+					<div class"row" style="padding-top:4%;">
+						<b>Салат</b>
+					</div>
+					<div class"row" style="padding-top:3%">
+                      Киев Украина
+					</div>	
+				</div>
+				<div class="col-sm-2" style="height:100%;padding-top:4%;">
+					<center>
+					<div class="div-cirle-bottom">
+					</div>
+				</center>	
+				</div>
+			</div>
+			</div>
+		    <div class="col-sm-4 right-column" id="5-col">
+			<div class="row row row-right">
+				<div class="col-sm-2 cirle-left-top">
+			      <center>
+				    <div class="cirle-left-second">
+					  <div class="price">15$
+					  </div>
+				    </div>
+			      </center>
+			   </div>
+			   
+			   <div class="col-sm-8">
+			   </div>
+				<div class="col-sm-2 col-cirle">
+				<center class="top-center">
+					<div class="div-cirle-top">
+						<span class="glyphicon glyphicon-flash class-flash">
+						</span>
+					</div>
+				  </center>
+				</div>	
+			</div>
+			<div class="row" style="height:30%;background-color:#ffffff">
+				<div class="col-sm-10" style="font-family:Roboto">
+					<div class"row" style="padding-top:4%;">
+						<b>Салат</b>
+					</div>
+					<div class"row" style="padding-top:3%">
+                      Киев Украина
+					</div>	
+				</div>
+				<div class="col-sm-2" style="height:100%;padding-top:4%;">
+					<center>
+					<div class="div-cirle-bottom">
+					</div>
+				</center>	
+				</div>
+			</div>
+			</div>
+		    <div class="col-sm-4 right-column" id="6-col">
+	<div class="row row row-right">
+		<div class="col-sm-2 cirle-left-top">
+	      <center>
+		    <div class="cirle-left-second">
+			  <div class="price">12$
+			  </div>
+		    </div>
+	      </center>
+	   </div>
+	   
+	   <div class="col-sm-8">
+	   </div>
+		<div class="col-sm-2 col-cirle">
+		<center class="top-center">
+			<div class="div-cirle-top">
+				<span class="glyphicon glyphicon-flash class-flash">
+				</span>
+			</div>
+		  </center>
+		</div>	
+	</div>
+	<div class="row" style="height:30%;background-color:#ffffff">
+		<div class="col-sm-10" style="font-family:Roboto">
+			<div class"row" style="padding-top:4%;">
+				<b>Салат</b>
+			</div>
+			<div class"row" style="padding-top:3%">
+              Киев Украина
+			</div>	
+		</div>
+		<div class="col-sm-2" style="height:100%;padding-top:4%;">
+			<center>
+			<div class="div-cirle-bottom">
+			</div>
+		</center>	
+		</div>
+	</div>
+		    </div>
+	     </div>
+		 <div class="row" style="height:33%">
+ 		    <div class="col-sm-4 right-column" id="7-col">
+	<div class="row row row-right">
+		<div class="col-sm-2 cirle-left-top">
+	      <center>
+		    <div class="cirle-left-second">
+			  <div class="price">19$
+			  </div>
+		    </div>
+	      </center>
+	   </div>
+	   
+	   <div class="col-sm-8">
+	   </div>
+		<div class="col-sm-2 col-cirle">
+		<center class="top-center">
+			<div class="div-cirle-top">
+				<span class="glyphicon glyphicon-flash class-flash">
+				</span>
+			</div>
+		  </center>
+		</div>	
+	</div>
+	<div class="row" style="height:30%;background-color:#ffffff">
+		<div class="col-sm-10" style="font-family:Roboto">
+			<div class"row" style="padding-top:4%;">
+				<b>Салат</b>
+			</div>
+			<div class"row" style="padding-top:3%">
+              Киев Украина
+			</div>	
+		</div>
+		<div class="col-sm-2" style="height:100%;padding-top:4%;">
+			<center>
+			<div class="div-cirle-bottom">
+			</div>
+		</center>	
+		</div>
+	</div>
+ 			</div>
+ 		    <div class="col-sm-4 right-column" id="8-col">
+	<div class="row row row-right">
+		<div class="col-sm-2 cirle-left-top">
+	      <center>
+		    <div class="cirle-left-second">
+			  <div class="price">18$
+			  </div>
+		    </div>
+	      </center>
+	   </div>
+	   
+	   <div class="col-sm-8">
+	   </div>
+		<div class="col-sm-2 col-cirle">
+		<center class="top-center">
+			<div class="div-cirle-top">
+				<span class="glyphicon glyphicon-flash class-flash">
+				</span>
+			</div>
+		  </center>
+		</div>	
+	</div>
+	<div class="row" style="height:30%;background-color:#ffffff">
+		<div class="col-sm-10" style="font-family:Roboto">
+			<div class"row" style="padding-top:4%;">
+				<b>Салат</b>
+			</div>
+			<div class"row" style="padding-top:3%">
+              Киев Украина
+			</div>	
+		</div>
+		<div class="col-sm-2" style="height:100%;padding-top:4%;">
+			<center>
+			<div class="div-cirle-bottom">
+			</div>
+		</center>	
+		</div>
+	</div>
+ 			</div>
+ 		    <div class="col-sm-4 right-column" id="9-col">
+	<div class="row row row-right">
+		<div class="col-sm-2 cirle-left-top">
+	      <center>
+		    <div class="cirle-left-second">
+			  <div class="price">20$
+			  </div>
+		    </div>
+	      </center>
+	   </div>
+	   
+	   <div class="col-sm-8">
+	   </div>
+		<div class="col-sm-2 col-cirle">
+		<center class="top-center">
+			<div class="div-cirle-top">
+				<span class="glyphicon glyphicon-flash class-flash">
+				</span>
+			</div>
+		  </center>
+		</div>	
+	</div>
+	<div class="row" style="height:30%;background-color:#ffffff">
+		<div class="col-sm-10" style="font-family:Roboto">
+			<div class"row" style="padding-top:4%;">
+				<b>Салат</b>
+			</div>
+			<div class"row" style="padding-top:3%">
+              Киев Украина
+			</div>	
+		</div>
+		<div class="col-sm-2" style="height:100%;padding-top:4%;">
+			<center>
+			<div class="div-cirle-bottom">
+			</div>
+		</center>	
+		</div>
+	</div>
+ 		    </div>
+		 </div>
+          </div>  
+      </div>
+
+</body>

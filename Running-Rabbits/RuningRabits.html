@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>javabook</title>
+        <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            
+                
+
+<style>
+    .rabbit {
+       background-image: url("Animals-Running-Rabbit-icon.png");
+       height:48px;
+       width:48px;
+       border-radius:7px;
+       left:0px;
+       background-color:yellow;
+       position:absolute;
+       text-align:center;
+       vertical-align:middle;
+       /*-webkit-animation-name: example;
+       -webkit-animation-duration: 5s;
+       animation-name: example;
+       animation-duration: 5s;
+       -webkit-animation-play-state: paused;
+       animation-play-state: paused;*/
+    }
+.field {
+    width:100%;
+    /*background-color:green;*/
+    position:fixed;
+    height:800px;
+}
+body{
+	  background-image: url(place.jpg);
+	  background-size:100%;
+}
+@keyframes example {
+    0% {
+        
+        
+        left:0px;
+    }
+    50% {
+      
+        
+        left:1200px;
+    }
+    100% {
+        
+        
+        left:0px;
+    }
+
+}
+
+</style>
+<script>
+  
+  var  LEFT_TO_RIGHT=1,RIGHT_TO_LEFT=-1;
+  var STOPPED=0;
+    var distance=500;
+    
+    function Rabbit(number,tp) {
+        this.name=number;
+        this.speed=Math.random();
+        this.time=(distance/this.speed)/100;
+        this._left=0;
+        this._direction=LEFT_TO_RIGHT;
+        this.__defineGetter__("left", function(){
+                              return this._left;
+                              });
+                              
+        this.__defineSetter__("left", function(s){
+                              this._left = s;
+                              if(this._left < 0){
+                              this._left=0;
+                              }
+                              if(this._left>distance) {
+                              this._left=distance;
+                              }
+                              this.div.style.left=this._left+"px";
+                              });
+                              
+      this.__defineGetter__("direction",function() {
+                            return this._direction;
+                          });
+      
+      this.__defineSetter__("direction",function(s) {
+                            this._direction=s;
+                            if(this._direction == RIGHT_TO_LEFT ){
+                            this.div.style.backgroundImage="url('Animals-Rabbit-icon.png')";
+                            }
+                            else  {
+                            this.div.style.backgroundImage="url('Animals-Running-Rabbit-icon.png')";
+                            }
+                            });
+        this.finish=0;
+        this.finished=false;
+          //this._direction=LEFT_TO_RIGHT;//STOPPED;//1 c лева на право -1 с права на лево
+        this.div=document.createElement("div");
+        this.div.className="rabbit";
+        this.div.innerText=this.name;
+        this.div.style.top=tp + "px";
+        //this.show=function() {};
+        this.run=function(){
+            this.div.style.webkitAnimationPlayState = "running";
+        };
+        this.changeDirection=function(){
+            this.finish=200;
+              this.direction=LEFT_TO_RIGHT;
+        }
+        this.run2=function(){
+          var me=this;
+         var timer= setInterval(function(){
+                      if(me.left>=me.finish && me.direction === LEFT_TO_RIGHT) {
+                      me.left=me.finish;
+                      me.direction=RIGHT_TO_LEFT;
+                      me.finish=0;
+                                //me.div.style.left=me.left+"px";
+                      console.log("stop");
+                                //me.div.style.backgroundImage="url('Animals-Rabbit-icon.png')";
+                      
+                      }
+                      else if(me.left <= 0 && me.direction === RIGHT_TO_LEFT) {
+                                //me.left=0;
+                                // me.div.style.left=me.left+"px";
+                      console.log("rabbit:"+me.name + "stoped");
+                                //me.div.style.backgroundImage="url('Animals-Running-Rabbit-icon.png')";
+                      window.clearInterval(timer);
+                                timer=null;
+                                me.changeDirection();
+                      }
+                      else {
+                      me.left+=Math.random()*15*me.direction;
+                                //me.div.style.left=me.left+"px";
+                      }
+       
+                      },41);
+        };
+        
+        
+    }
+var rabbits=[];
+function start(){
+    rabbits=[];
+    var top=20;
+    var divField=document.getElementById("field");
+    divField.innerHTML="";
+    for(var i=1;i<=10;i++) {
+      var rabbit = new Rabbit(i,top);
+      rabbit.finish=distance;
+      divField.appendChild(rabbit.div);
+      rabbits.push(rabbit);
+      top+=54;
+        
+    }
+    
+}
+
+function run() {
+ 
+    for(var i=0;i<rabbits.length;i++){
+      rabbits[i].run2();
+    }
+}
+
+
+function run3() {
+  var runningRabbitCount=rabbits.length;
+  for(var i=0;i<rabbits.length;i++){
+    
+    var rabbit=rabbits[i];
+    rabbit.direction=LEFT_TO_RIGHT;
+    rabbit.finished=false;
+  }
+  var timer=setInterval(function(){
+                        
+                        for(var i=0;i<rabbits.length;i++){
+                        var rabbit=rabbits[i];
+                        if(rabbit.left>=rabbit.finish && rabbit.direction === LEFT_TO_RIGHT) {
+                        rabbit.left=rabbit.finish;
+                        rabbit.direction=RIGHT_TO_LEFT;
+                        rabbit.finish=0;
+                        //rabbit.div.style.left=rabbit.left+"px";
+                        console.log("stop");
+                        rabbit.div.style.backgroundImage="url('Animals-Rabbit-icon.png')";
+                        }             
+                        else if(rabbit.left <= 0 && rabbit.direction === RIGHT_TO_LEFT) {
+                        //rabbit.left=0;
+                        //rabbit.div.style.left=rabbit.left+"px";
+                        
+                        rabbit.div.style.backgroundImage="url('Animals-Running-Rabbit-icon.png')";
+                        
+                         if(!rabbit.finished){
+                        //rabbit.left=0;
+                        //rabbit.div.style.left=rabbit.left+"px";
+                            rabbit.finished=true;
+                            rabbit.direction=STOPPED;
+                            rabbit.finish=distance;
+                            runningRabbitCount--;
+                        
+                          if(runningRabbitCount == 0){
+                        window.clearInterval(timer);
+                        timer=null;
+                        }
+                        }
+                        }
+                        else {
+                        rabbit.left+=Math.random()*15*rabbit.direction;
+                        //rabbit.div.style.left=rabbit.left+"px";
+                        }
+                        }
+                        
+                        },41);
+  
+  
+}
+
+
+
+</script>
+
+   </head>
+    <body onload="start()">
+      
+      
+        <button onclick="run();">RUN</button>
+        <div id="field" class="field" >
+          
+        </div>
+    </body>
+</html>

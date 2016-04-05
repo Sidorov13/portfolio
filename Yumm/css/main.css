@@ -1,0 +1,294 @@
+html,body{
+	font-family: Roboto Light;
+}
+.class white {
+color:white;	
+}
+
+#divYummText {
+	bottom: 43.7%;
+	right: 30.6%;
+    position:absolute;
+}
+#h_1Yumm {
+	color: rgb(255, 255, 255);
+	font-family: Roboto Light;
+	font-size:126px;
+	line-height: 1.302;
+	text-align:center;
+	letter-spacing: 2.4px;
+}
+#h_2Yumm  {
+	color: rgb(255, 255, 255);
+	font-family:RobotoRegular;
+	font-size: 21.6px;
+	letter-spacing: 2.7px;
+	 
+}
+#div_2_YummText{
+   position:absolute;
+   bottom: 40%;
+   right: 28.5%;
+  	
+}
+#startFoodButton {
+	background-color:#FFCF18;
+	width: 197px;
+	border-color: #FFCF18;
+	font-size: 16px;
+}
+#enterButton {
+    background-color: initial;
+    border-color: white;
+    height: 37px;
+    width: 90px;
+    font-size: 15px;
+	font-family:Roboto Light;
+	border-color:#dadada;
+	color:#e9e9e9;
+	}
+#startFoodButton-2{
+	     background-color: white;
+	     width: 197px;
+	     border-color: #dadada;
+	     font-size: 16px;
+	     color: #dadada;
+	     font-size: 15px;
+	     font-family:Roboto Light;	
+	}
+#navbar {
+	margin:0px;
+	background-color:initial;
+	border:0px;
+	font-size:15px;
+	padding-left:10%;
+	font-family: Roboto Light;
+	
+}
+#menu-down {
+	position:absolute;
+	left:49.5%;
+	bottom:5%;
+	font-size:35px;
+	color:white;
+	cursor:pointer;
+}
+#navbar-search {
+	background-color:initial;
+	font-size:15px;
+	padding-left:10%;
+	font-family: Roboto Light;
+	border-bottom: 1px solid #e7e7e7;
+	
+}
+#navbar-search-food{
+	background-color:initial;
+	font-size:15px;
+	padding-left:10%;
+	font-family: Roboto Light;
+	margin-bottom:0px;	
+}
+#leftContainer{
+    height: 100%;
+    background-color:#f8f8f8;
+    padding-left: 3%;
+    padding-top: 1%;
+    padding-right: 3%;
+
+	
+}
+#rightContainer{
+    height: 100%;
+    background-color:#ffffff;
+
+}
+#bottomSearch{
+	    background-color:#ffd31c;
+	    border-color: #ffd31c;
+		width: 130px;	
+		/*margin-left: 32%;*/
+		
+}
+#bottom-food{
+	    background-color:#ffd31c;
+	    border-color: #ffd31c;	
+		/*margin-left: 32%;*/
+		width: 54%;
+		height: 42px;
+		
+}
+
+#span-caret{
+	color:#9a9a9a;
+    position: absolute;
+    right: 11%;
+    bottom: 36%;
+	
+}
+#span-caret-food{
+    color: #7d7d7d;
+    position: relative;
+    left: 26%;
+}
+.right-column {
+	height:100%;
+	padding-left:24px;  /*24 8px*/
+	padding-top:8px;
+
+}
+.col-left-food{
+    padding-left: 26px;
+    padding-top: 5px;	
+}
+.row-left-food{
+	color: #9f9f9f;
+	font-size: 15px;
+	line-height: 1.5;
+}
+.left-row{
+padding-left: 1%;	
+padding-top: 1%;
+font-size: 15px;
+}
+.left-dropdown{
+	font-size: 17px;
+}
+.cirle-left-top{
+	padding-top: 4%;
+
+}
+.cirle-left-second{
+	border-radius: 50%;
+	background-color:#ffffff;
+	height:38px;
+	width:38px;
+}
+.flash{
+	padding-top:3%;
+}
+.price{
+	color:#ffd31c;
+	padding-top:9px;
+	font-family:Roboto;
+	font-size: 16px;"
+}
+.row-right{
+	height:70%;
+	background-color:#f3f3f3;
+}
+.col-cirle{
+padding-top:3%;height:50%;	
+}
+.div-cirle-top{
+border-radius:40%;
+height:100%;
+width:100%;
+}
+.class-flash{
+	color:#ff7a2f;
+	font-size:25px;
+	vertical-align:-webkit-baseline-middle;
+}
+.div-cirle-bottom{
+	background-color:#f3f3f3;
+	border-radius:19px;
+	height:38px;
+	width:38px;
+	
+}
+.cirle-food{
+	background-color:#f3f3f3;
+	border-radius:27px;
+	height:55px;
+	width:55px;
+	
+	}
+	.cirle-food-orange {
+		     border-radius: 20px;
+		     height: 40px;
+		     width: 40px;
+		     font-size: 14px;
+		     text-align: -webkit-center;
+		     padding-top: 8px;
+			 background-color:#ff7a2f;
+			 margin-top: 20%;
+			 margin-left: 50%;	
+	}
+.row-food{
+	text-align: center;
+	font-family:Roboto Light;
+}
+.col-food {
+	text-align: center;
+	color: #fd8a49;
+	font-size: 16px;
+	font-family: Roboto Light;
+}
+.top-center{
+	height:70%;
+}
+
+/* Ширина слайдера */
+#slider {
+	width: 200px;
+}
+/* Контейнер слайдера */
+.ui-slider {
+	position: relative;
+}
+/* Ползунок */
+.ui-slider .ui-slider-handle {
+	position: absolute;
+	z-index: 2;
+	width: 13px;   /* Задаем нужную ширину */
+	height: 13px;  /* и высоту */
+	 /* картинка изображающая ползунок. Или можно залить цветом, задать бордюр и скругления */
+	cursor: pointer
+}
+.ui-slider .ui-slider-range {
+	position: absolute;
+	z-index: 1;
+	font-size: .7em;
+	display: block;
+	border: 0;
+	overflow: hidden;
+}
+/* горизонтальный слайдер (сама полоса по которой бегает ползунок) */
+.ui-slider-horizontal {
+	 height: 3px; /* задаем высоту согласно дизайна */
+}
+/* позиционируем ползунки */
+.ui-slider-horizontal .ui-slider-handle { 
+	top: -5px;
+	margin-left: -6px;
+    width: 14px;
+    height: 14px;
+    background-color: #e1e1e1;
+}
+.ui-slider-horizontal .ui-slider-range {
+	top: 0;
+	height: 100%;
+}
+.ui-slider-horizontal .ui-slider-range-min { 
+	left: 0;
+}
+.ui-slider-horizontal .ui-slider-range-max {
+	right: 0;
+}
+/* оформление полосы по которой ходит ползунок */
+.ui-widget-content { 
+	border: 1px solid #D4D4D4;
+	background: #fff;
+}
+/* оформление активного участка (между двумя ползунками) */
+.ui-widget-header { 
+	border: 1px solid #D4D4D4;
+	background: #f00;
+}
+/* скругление для полосы слайдера */
+.ui-corner-all {
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+}
+

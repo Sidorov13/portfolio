@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Yumm</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="stylesheet" href="css/bootstrap.min.css">
+                <script src="js/jquery.min.js"></script>
+                <script src="js/bootstrap.min.js"></script>
+			<script src="js/jquery-ui.js"></script>
+			<script src="js/yumm.js"></script>
+			 <link rel="stylesheet" href="css/main.css">
+			
+</head>
+<body>
+    <nav class="navbar navbar-default"  id="navbar-search-food">
+	  <div class="container-fluid">
+	    <div class="navbar-header">
+	      <a class="navbar-brand" style="position: relative;bottom: 10px;left: 16%;"> <img src="logofinished_yellow.png" style="height: 45px;width: 53px;"/></a>
+		  <a class="navbar-brand" href="#" style="color: #ffd31c;font-size:22px;padding-right: 42px;padding-left: 73px;">Yumm</a>			  
+	    </div>
+	    <div>
+		  <ul class="nav navbar-nav">
+		    <li class="dropdown">
+			  <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color:#f3f3f3;font-size: 19px;font-family:Roboto Light">Киев
+			  <span class="caret" style="color:#fd8a49"></span></a>
+			  <ul class="dropdown-menu">
+			    <li><a href="#">Page 1-1</a></li>
+				<li><a href="#">Page 1-2</a></li>
+				<li><a href="#">Page 1-3</a></li> 
+			  </ul>
+			</li>  
+		     </ul> 
+		  <ul class="nav navbar-nav navbar-right" style="padding-right: 17%;">
+		    <li style="margin-right:20px"><a href="#"><button type="button" class="btn btn-warning" id="startFoodButton-2">Начать готовить</button></a></li>
+		    <li><a href="#"><button type="button" class="btn btn-default" id="enterButton">Вход</button></a></li>
+		  </ul>
+	    </div>
+	   </div>
+    </nav>
+<div class="container-fluid" style="padding:0px">
+	
+<div class="row-fluid" style="height:1000px;">
+  <div class="col-sm-2" style="background-color:#f8f8f8;height:1000px">
+	  <div class="row">
+	  </div>
+  </div>
+  <!--
+	                           left panel 
+  -->
+  <div class="col-sm-3" style="height: 1000px;">   
+    <div class="row">
+      <div class="col-sm-12" style="height:1000px;background-color: #f8f8f8;">
+	    <div class="row" style="height:560px;">
+			
+			<!--
+				              left content
+				-->
+		  <div class="col-sm-12" style="border: 1px solid #ebebeb";>
+			 <div class="row" style="height:200px;background-color:#ffffff">
+               <div class="col-sm-12">
+
+				<div class="row" style="padding-top: 5%;padding-bottom: 5%;">
+					
+					 <div class="cirle-food" style="margin: 0 auto;">
+					 </div>
+				    
+				</div>
+				<div class="row row-food">	 
+				  <div class="col-sm-12" style="padding-bottom: 1%;">
+					  Клубничные вафли
+					<span class="glyphicon glyphicon-flash class-flash" style="font-size: 18px;position:absolute;">
+					</span>					
+				</div>
+			</div>
+				<div class="row row-food">
+					<div class="col-sm-12" style="font-family:Roboto Light;color:#b0b0b0">
+						Киев,Украина
+					</div>
+				</div>  
+			   </div>	   
+			 </div>
+			 <div class="row" style="height:200px;background-color:#f8f8f8">
+				<div class="col-sm-12 col-food"   style="padding-top: 14px;padding-bottom:8px">
+					Быстрый заказ
+				</div>
+				<div class="col-sm-12 col-food" style="color:#919191;padding-bottom:17px">
+					Количество
+				</div>
+					<div class="col-sm-12" style="text-align: center;padding-bottom:20px">
+	  			    <button class="btn btn-defult dropdown-toggle left-dropdown" type="button" data-toggle="dropdown" style="font-size:15px;width:54%;background-color: #f3f3f3;color: #fd8a49;"> 2 порции
+	  			    <span class="caret"  id="span-caret-food"></span></button>
+	  			    <ul class="dropdown-menu dropdown-menu-right">
+	  			      <li><a href="#">первтое</a></li>
+	  			      <li><a href="#">втрое</a></li>
+	  			      <li><a href="#">третье</a></li> 
+	  			    </ul>
+				</div>
+					<div class=col-sm-12        style="text-align: center">
+						<button type="button" class="btn btn-warning " id="bottom-food">Заказать</button>
+					</div>	
+			 </div>
+			 <div class="row" style="background-color:#ffffff;padding-bottom: 25px;">
+				<div class="col-sm-6 col-left-food" >
+					<div class="row" style="color:#fd8a49;;padding-bottom: 7px;">
+						Меню
+					</div>
+					<div class="row row-left-food">
+						Вафли
+					</div>
+					<div class="row row-left-food">
+						Свежая клубника
+					</div>
+					<div class="row row-left-food" >
+						Сливки
+					</div>
+					<div class="row row-left-food">
+						Сахарная пудра
+					</div>
+					<div class="row row-left-food">
+						Корица
+					</div>
+				</div>
+				<div class="col-sm-6 col-left-food">
+					<div class="row" style="color:#fd8a49;;padding-bottom: 7px;">
+						Особенности
+					</div>
+					<div class="row row-left-food">
+						Вегетариаство
+					</div>
+					<div class="row row-left-food">
+						Лактоза
+					</div>
+					<div class="row row-left-food">
+						Мучное
+					</div>
+				</div>	
+			 </div>	  
+		  </div>	  	
+	    </div>
+		
+      <div class="row" style="height:440px;background-color:#f8f8f8">
+	    <div class="col-sm-12">
+		</div>
+	  </div>
+	  			   
+     </div>  		
+   </div>	  
+ </div>
+ <!--
+                              right panel 
+ -->
+  <div class="col-sm-5" style="height: 1000px;">
+    <div class="row">
+    <div class="col-sm-12">
+      <div class="row"style="height: 400px;">
+		  
+		  <!--  
+			                 right content
+			  -->		  
+	    <div class="col-sm-12" style="padding: 0%;">
+			
+    	  	  <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
+    	  	    <!-- Indicators -->
+    	  	    <ol class="carousel-indicators">
+    	  	      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    	  	      <li data-target="#myCarousel" data-slide-to="1"></li>
+    	  	      <li data-target="#myCarousel" data-slide-to="2"></li>
+  	  	     
+    	  	    </ol>
+
+    	  	    <!-- Wrapper for slides -->
+    	  	    <div class="carousel-inner" role="listbox">
+    	  	      <div class="item active">
+    	  	        <img src="food2.jpg" alt="Chania"  style="width:100%;height:400px;">
+    	  	      </div>
+
+    	  	      <div class="item">
+    	  	        <img src="food1.jpg" alt="Cha3ia"  style="width:100%;height:400px;">
+    	  	      </div>
+
+
+    	  	      <div class="item">
+    	  	        <img src="food4.jpg" alt="Flower"  style="width:100%;height:400px;">
+    	  	      </div>
+    	  	    </div>
+
+    	  	    <!-- Left and right controls -->
+				
+    	  	    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev" style="opacity: 1;">
+		  			<div class="cirle-food-orange">
+						15$
+					
+		  			</div>
+    	  	      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    	  	      <span class="sr-only">Previous</span>
+    	  	    </a>
+    	  	    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next" style="opacity: 1;">
+    	  	      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    	  	      <span class="sr-only">Next</span>
+				  <span class="glyphicon glyphicon-heart-empty" style="font-size: 29px;margin-top: 20%;margin-right: 50%;color:#ffffff"></span>
+    	  	    </a>
+    	  	  </div>
+		</div>		  
+	  </div>
+	
+      <div class="row" style="height: 600px; border: 1px solid #ebebeb;border-bottom-color: white">
+  	    <div class="col-sm-12">
+			<div class="row">
+		   <table style="width:100%">
+			   <tr>
+				   <td style="width:20%;padding-top: 30px;padding-left:30px;padding-bottom:20px">
+					   <b> Всего 45 отзывов</b>
+					</td>
+					
+					<td style=" padding-top: 30px;padding-bottom:20px"> 
+	 				   <span class="glyphicon glyphicon-star" style="color:#ff7a2f;"></span>
+	 				   <span class="glyphicon glyphicon-star" style="color:#ff7a2f;"></span>
+	 				   <span class="glyphicon glyphicon-star" style="color:#ff7a2f;"></span>
+	 				   <span class="glyphicon glyphicon-star" style="color:#f3f3f3"></span>
+	 				   <span class="glyphicon glyphicon-star" style="color:#f3f3f3"></span>
+					</td>
+			   </tr>
+		   </table>
+	   </div>
+		 <div class="row">
+	       <!--
+		   <div class="col-sm-12">
+			   <div class="row">
+				   <div class="col-sm-3" style="font-size: 15px;padding-left: 5%;padding-top: 5%;">
+			        Всего 45 отзывов
+			       </div>
+			       <div class="col-sm-4" style="padding-top: 5%;padding-left: 0%;">
+				   <span class="glyphicon glyphicon-star" style="color:#ff7a2f;"></span>
+				   <span class="glyphicon glyphicon-star" style="color:#ff7a2f;"></span>
+				   <span class="glyphicon glyphicon-star" style="color:#ff7a2f;"></span>
+				   <span class="glyphicon glyphicon-star" style="color:#f3f3f3"></span>
+				   <span class="glyphicon glyphicon-star" style="color:#f3f3f3"></span>
+			   </div>
+			       <div class="col-sm-7">
+			       </div>
+		      </div>
+			  <div class="row">
+			    <div class="col-sm-2">
+				 <div class="cirle-food">
+			 </div>
+				</div>
+			    <div class="col-sm-8">
+					<div class="row">
+						Максим Паданей
+					</div>
+					<div class="row">
+						Спасибо за чудесные вафли!Доставили даже раньше.Yumm does!
+						Кстати,давно заказываю у этого повара.Люблю!
+					</div>	
+				</div>
+			    <div class="col-sm-2">
+					<span class="glyphicon glyphicon-heart-empty" style="font-size:20px;color:#969696"></span>
+				</div> 
+			   </div> 
+
+		   </div>
+	   -->
+			   <table style="width:100%">
+				   <tr>
+					   <td>
+					   </td>
+					   <td style="width: 10%;">
+			  				 <div class="cirle-food" style="margin: 0 auto;">
+			  			 </div>
+					   </td>
+					   <td style="width:70%;">
+						   <table style="width:100%">
+							<tr>
+							     <td>
+								   <b>Максим Паданей</b> 
+								 </td>
+							   </tr>
+				            <tr>
+					            <td style="color:#b4b4b4">
+   						Спасибо за чудесные вафли!Доставили даже раньше.Yumm does!
+   						Кстати,давно заказываю у этого повара.Люблю!
+						        </td>
+					        </tr>
+					     </table>
+					   </td>
+					   <td>
+						   &nbsp;
+					   </td>
+					   <td>
+						   &nbsp;
+					   </td>
+					   <td style="vertical-align: baseline;">
+						   <span class="glyphicon glyphicon-heart-empty" style="font-size:20px;color:#969696"></span>
+					   </td>
+				   </tr>
+				   <tr>
+					   <td>
+						   &nbsp;
+					   </td>
+					</tr>   
+				   <tr>
+					   <td colspan="6">
+						    <hr style="width:90%;"/>
+					   </td>
+					  
+				   </tr>  
+			   </table> 
+			   
+	   </div>
+		 <div class="row">
+			   <table style="width:100%">
+				   <tr>
+					   <td>
+					   </td>
+					   <td style="width: 10%;">
+			  				 <div class="cirle-food" style="margin: 0 auto;">
+			  			 </div>
+					   </td>
+					   <td style="width:70%;">
+						   <table style="width:100%">
+							<tr>
+							     <td>
+								   <b>Ваcя Пупкин</b> 
+								 </td>
+							   </tr>
+				            <tr>
+					            <td style="color:#b4b4b4">
+   						Спасибо за чудесные вафли!Доставили даже раньше.Yumm does!
+   						Кстати,давно заказываю у этого повара.Люблю!
+						        </td>
+					        </tr>
+					     </table>
+					   </td>
+					   <td>
+						   &nbsp;
+					   </td>
+					   <td>
+						   &nbsp;
+					   </td>
+					   <td style="vertical-align: baseline;">
+						   <span class="glyphicon glyphicon-heart-empty" style="font-size:20px;color:#969696"></span>
+					   </td>
+				   </tr>
+				   <tr>
+					   <td>
+						   &nbsp;
+					   </td>
+					</tr>   
+				   <tr>
+					   <td colspan="6">
+						    <hr style="width:90%;"/>
+					   </td>
+					  
+				   </tr>  
+			   </table> 
+		 </div>
+		 <div class="row">
+			   <table style="width:100%">
+				   <tr>
+					   <td>
+					   </td>
+					   <td style="width: 10%;">
+			  				 <div class="cirle-food" style="margin: 0 auto;">
+			  			 </div>
+					   </td>
+					   <td style="width:70%;">
+						   <table style="width:100%">
+							<tr>
+							     <td>
+								   <b>Петя Петров</b> 
+								 </td>
+							   </tr>
+				            <tr>
+					            <td style="color:#b4b4b4">
+   						Спасибо за чудесные вафли!Доставили даже раньше.Yumm does!
+   						Кстати,давно заказываю у этого повара.Люблю!
+						        </td>
+					        </tr>
+					     </table>
+					   </td>
+					   <td>
+						   &nbsp;
+					   </td>
+					   <td>
+						   &nbsp;
+					   </td>
+					   <td style="vertical-align: baseline;">
+						   <span class="glyphicon glyphicon-heart-empty" style="font-size:20px;color:#969696"></span>
+					   </td>
+				   </tr>
+				   <tr>
+					   <td>
+						   &nbsp;
+					   </td>
+					</tr>   
+				   <tr>
+					   <td colspan="6">
+						    <hr style="width:90%;"/>
+					   </td>
+					  
+				   </tr>  
+			   </table> 
+		 </div>
+		 
+		 <div class="row">
+			 <div class="col-sm-12">
+		     </div>
+		 </div>
+		 
+  		</div>
+      </div>	  
+	</div>
+   </div> 
+  </div>
+  <div class="col-sm-2" style="background-color:#f8f8f8;height:1000px">
+	  <div class="row">
+	  </div>
+  </div>	
+</div>
+<div class="row-fluid">
+</div>	
+</div>	
+</body>

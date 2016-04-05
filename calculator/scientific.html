@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+	 <meta charset="utf-8">
+	<link rel="stylesheet" href="kol.css"/>
+	<script type="text/javascript" src="kol.js"> </script>
+</head>
+<body onload="initcol()">
+	<span id="exp"></span>
+	<table id="toptb">
+		<tr>
+			<td id="top1"> <a href="calculator.html">standart </a> scientific
+				<span id="mem">0</span>
+				 </td>
+		</tr>
+		<tr>
+			<td id="middle">0</td>
+		</tr>
+		<tr>
+			<td id="bottom">
+				<table id="tablebottom">
+					<tr>
+						<td id="pad3">
+							<table id="tablepad3">
+								<tr>
+									<td id="deg" onclick="Deg()">Deg</td>
+									<td onclick="bracket('(')">(</td>	
+									<td onclick="bracket(')')">)</td>	
+									<td onclick="elem.innerHTML=Math.E;">E</td>	
+									<td onclick="reset('m')">M</td>											
+								</tr>
+								<tr>
+									<td onclick="assign_pi()">П</td>
+									<td onclick="sin()">sin</td>
+									<td onclick="cos()">cos</td>
+									<td onclick="tan()">tan</td>
+									<td onclick="minus()">&plusmn;</td>
+
+								</tr>
+								<tr>
+									<td onclick="kwadr()">x2</td>
+									<td onclick="sin1()">1/sin</td>
+									<td onclick="cos1()">1/cos</td>
+									<td onclick="tan1()">1/tan</td>
+									<td onclick="square()">&radic;</td>
+								</tr>
+								<tr>
+									<td onclick="xpowy()">XpowY</td>
+									<td onclick="tenpowx()">10powX</td>
+									<td onclick="epowx()">EpowX</td>
+									<td onclick="it_eval('%')">Mod</td>
+									<td onclick="percent()">%</td>
+									
+
+								</tr>
+								<tr id="t6">
+										
+									<td onclick="rootXY()"> 
+										<table id="t4"> 
+										<tr>
+									<td id="t1"> y</td>
+								<td id="t5" rowspan="3">&radic;</td>
+										<td></td>								
+								</tr>																						
+									<td></td>
+									
+									<td></td>
+									</tr>
+									<tr>
+									<td></td>									
+									<td id="t3">x</td>
+
+								</tr>
+								</table>
+											
+										</td>
+									<td onclick="log()">log</td>
+									<td onclick="ln()">ln</td>
+									<td onclick="fake()">n!</td>
+									<td onclick="share()">1/x</td>
+												
+								</tr>
+							</table>
+					
+						</td>
+					    <td id="pad4">
+						<table id="tablepad2">
+							<tr>
+								<td onclick="reset('ce')">CE</td>							
+								<td onclick="reset('c')">C</td>
+								<td onclick="back()">back</td>
+								<td onclick="it_eval('/')">/</td>
+							</tr>
+							<tr>
+								<td onclick="adddigit(7)">7</td>
+								<td onclick="adddigit(8)">8</td>
+								<td onclick="adddigit(9)">9</td>
+								<td onclick="it_eval('*')">*</td>
+							</tr>
+							<tr>
+								<td onclick="adddigit(4)">4</td>
+								<td onclick="adddigit(5)">5</td>
+								<td onclick="adddigit(6)">6</td>
+								<td onclick="it_eval('-')">-</td>
+							</tr>
+							<tr>
+								<td onclick="adddigit(1)">1</td>
+								<td onclick="adddigit(2)">2</td>
+								<td onclick="adddigit(3)">3</td>
+								<td onclick="it_eval('+')">+</td>
+							</tr>
+							<tr>
+								<td colspan="2"onclick="adddigit(0)">0</td>								
+								<td onclick="adddigit('.')">.</td>
+								<td onclick="it_assign()">=</td>
+					</tr>
+							
+						</table>
+					</td>
+						</tr>
+				</table>				
+				 </td>
+		</tr>		
+	</table>
+</body>	
+</html>

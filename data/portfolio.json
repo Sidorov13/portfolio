@@ -1,0 +1,54 @@
+[
+	{
+	"image" : "img/yumm.jpg",
+	"title" : "Main",
+	"link" :  "<a href='#' class=links_portfolio>Yumm</a>",
+	"info" : "Сайт для заказа еды от домашних поваров",
+	"pages" : [
+		{
+	  "image" : "img/screen_yumm_2.jpg",
+	  "title" : "Food",
+	  "link" : "<a href='/Yumm/food.html' class=links_portfolio>Yumm</a>",
+	  "info" : "Сайт для заказа еды от домашних поваров"
+	},
+	{
+       "image" : "img/screen_yumm_3.jpg",
+       "title" : "Search",
+       "link" : "<a href='/Yumm/search.html' class=links_portfolio>Yumm</a>",
+	   "info" : "Сайт для заказа еды от домашних поваров"
+    },
+	{
+	   "image" : "img/yumm.jpg",
+	   "title" : "Main",
+	   "link" :  "<a href='/Yumm/main.html' class=links_portfolio>Yumm</a>",
+	   "info" : "Сайт для заказа еды от домашних поваров"
+	}
+           ]
+	},
+	
+	{
+	"image" : "img/list.jpg",
+	"title" : "Мои Списки",
+	"link" : "<a href='/list/index.html' class=links_portfolio>Lists</a>",
+	"info" : "Это приложение служит для создания списков . c возможностью  поиска оптимального маршрута."
+	},
+	{
+	"image" : "img/Rabbits.jpg",
+	"title" : "Зайцы",
+	"link" : "<a href='/Running-Rabbits/RuningRabits.html' class=links_portfolio>RunningRabbits</a>",
+	"info" :"Зайцы с рендомной  скоростью бегут на перегонки до финиша и обратно."
+	},
+	{
+	"image" : "img/map.jpg",
+	"title" : "Карты",
+	"info"  : "Работа с google maps API ,использование сервисов которые показывают ближайшие рестораны от моей геопозиции.Передвижение метки по карте .Можно поставить  маркер где находиться ресторан .",
+	"link" : "<a href='/map/map.html' class=links_portfolio>Maps</a>"
+    },
+	{
+	"image" : "img/calculator.jpg",
+	"title" : "Калькулятор",
+	"link" : "<a href='/calculator/scientific.html' class=links_portfolio>calculator</a> ",
+	"info" : "Калькулятор обычный и  научный"	
+	}
+
+]

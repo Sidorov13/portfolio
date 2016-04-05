@@ -1,0 +1,126 @@
+html {
+  position: relative;
+  min-height: 100%;
+ 
+}
+
+body {
+/*background-color:#FCFFCD;*/
+  margin-bottom: 80px;
+  
+ 
+  
+}
+#div {
+
+	width:100px;
+	height:200px;
+}
+.row_container_middle{
+	font-size: 1.3em;	
+}
+
+.title{
+	font-size:2em;
+	border-bottom: solid 2px white;
+	border-top: solid 2px  white;
+	text-align:left;
+	background-color:#3e4e5e;
+	
+	
+}
+.btn-send {
+	margin-top:30px;
+}
+.col_container_footer{
+border-top: solid #3e4e5e 2px ;
+border-bottom: solid #3e4e5e 2px;
+text-align:center;
+padding:1%;
+margin-top:30px;
+position: absolute;
+bottom: 0;
+width: 100%;
+
+}
+ .links_header {
+  color:black;
+ 
+}
+.col_container_contacts {
+	background-color:#C6BFD4;
+	padding:2%;
+	margin:2%;
+}
+a:hover {
+	 
+	 text-decoration: none;
+	 cursor:pointer;
+	
+}
+.col_my_skills {
+	font-size:25px;
+	background-color:#FFDA2F;
+	border: solid 0.3em black;
+	margin:10px;
+	
+}
+
+.col_container_header{
+border-right: solid #3e4e5e 0.1em;
+text-align:center;
+padding: 0.5em;
+
+}
+.ser_p {
+	padding-left:2%;
+border-left: solid 0.3em #FFDA2F;	
+}
+#ser_h{
+	color:white;
+}
+#fisrt_col_header{
+border-left: solid  #3e4e5e 0.1em;	
+}
+#data{
+    background-color: #FFBBBB;
+    width: 92px;
+    height: 88px;
+    border-radius: 48px;
+    text-align: -webkit-center;
+    padding: 2em;
+    font-size: 9px;
+	margin-top: 3em;
+}
+#info{
+	background-color:#DEDDE2;
+	margin:10px;
+	border:solid #E5BB33 2px;
+}
+.prof{ 
+	color:#CC9424;
+}
+#box_midle {
+
+}
+#Copyright_footer{
+	padding-top:25px;
+
+}
+.title_portfolio {
+	background-color:#3b5070;
+	text-align:center;
+	color:white;
+	border: solid  black 2px;	
+}
+.links_portfolio {
+	color:#FB9736;
+	text-decoration: none;
+}
+#image_portfolio {
+width:100%;
+height:200px;
+}
+#portfolio_box {
+	margin-top:20px;
+}

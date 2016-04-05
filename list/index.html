@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Мои Списки</title>
+        <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<meta name="apple-mobile-web-app-capable" content="yes">
+			
+                <!--<link rel="stylesheet" href="css/bootstrap.min.css">-->
+                    <script src="js/jquery.min.js"></script>
+				    <script src="js/jquery-ui.js"></script>
+				
+				
+				<link rel="stylesheet" href="css/font-awesome.min.css"/>
+                    <!--<script src="js/bootstrap.min.js"></script>-->
+					
+                    <script src="js/list.js"></script>
+					
+                   <!-- <script src="js/modal.js"></script>-->
+				   
+				    <script src="js/loader.js"></script>
+                    <link rel="stylesheet" type="text/css" href="css/list.css" />
+					<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+					
+    
+    <script>
+function _id(name) {
+	  
+  var elem=document.getElementById(name);
+  
+  if(!elem) {
+    alert("elem with name " + name + " not found");
+  }
+  return elem;
+}
+
+  var isDivVisible=true;
+
+function hiddenOrVisibleDiv() {
+  resetBorders();
+  var divChange=_id("div-change-mail");
+  divChange.style.display="none";
+  hideError();
+  //hidePassAndMail_2();
+  
+  if(isDivVisible) {
+	//divLogin.style.display="none";
+    //divRegistration.style.display="block";
+	$("#divLogin").hide("blind",1000);
+	$("#divRegistration").show("blind",1000);
+  }
+  else {
+	$("#divRegistration").hide("blind",1000);
+	$("#divLogin").show("blind",1000);
+    //divLogin.style.display="block";
+    //divRegistration.style.display="none";
+  }
+  isDivVisible=!isDivVisible;
+}
+					
+
+var currentErrorElem=null;
+var currentText="";
+					
+function showError(text,elementError) {
+  currentText=text;
+  currentErrorElem=elementError;
+  currentErrorElem.style.display="block";
+  currentErrorElem.style.color="red";
+  currentErrorElem.innerHTML=currentText;
+
+}
+
+function hideError(diverror_1,diverror_2) {
+	
+  var diverror_1=_id("divError_1");
+  var diverror_2=_id("divError_2");
+  var diverror_3=_id("divError_3");
+  var diverror_4=_id("divError_4");
+
+  diverror_1.style.display="none";
+  diverror_2.style.display="none";
+  diverror_3.style.display="none";
+  diverror_4.style.display="none";
+
+  
+  resetBorders();
+						
+}
+
+function resetBorders () {
+  _id("user").style.border="1px solid #ccc";
+  _id("user2").style.border="1px solid #ccc";
+  _id("pass").style.border="1px solid #ccc";
+  _id("pass2").style.border="1px solid #ccc";
+  _id("pass2_1").style.border="1px solid #ccc";
+  _id("inputMail").style.border="1px solid #ccc";
+  
+}
+
+function  reg() {  
+  hideError();
+  var diverror_1=_id("divError_1");
+  var diverror_2=_id("divError_2");
+  
+  var user=_id("user");
+  
+  if(user.value == "") {
+    user.focus();
+	showError("введите адрес электронной почты",diverror_1);
+	user.style.border=" 1px solid red";
+	return;
+  }
+  if(!user.value.match(/@/)) {
+    user.focus();
+	//var diverror=document.getElementById("diverror");
+	showError("введите правельный адрес электронной почты",diverror_1);
+	user.style.border=" 1px solid red";
+	
+ 	return;
+  }
+  
+  var pass=_id("pass");
+
+    if(pass.value == "") {
+      pass.focus();
+      showError("введите пароль",diverror_2);
+	  pass.style.border=" 1px solid red";
+ 	  return;
+    }					
+  var url="/register.php?user="+user.value+"&pwd="+pass.value +"&action=login" ;
+  
+  load_async(url,function(data){
+	  
+    var x=eval('('+data+')');
+	
+	if(x.result == false) {
+		 $("#div-change-mail").slideDown("slow");
+		 
+		 
+		//alert("x");	
+	}
+	else {
+		//все хорошо показывает списки;
+	    var divLogin=_id("divLogin");
+		var divChange=_id("div-change-mail");
+  
+	    divLogin.style.display="none";
+		divChange.style.display="none";
+	    //diverror.style.visibility="hidden";
+	    createlists();
+	    //hidePassAndMail_2();
+		//$("#div-change-mail").slideUp("slow");
+	    
+	}
+  });
+  resetBorders();  
+}
+					
+function checkPassAndEmail() {
+  hideError();
+  
+  var diverror_3=_id("divError_3");
+  var diverror_4=_id("divError_4");
+  
+  var pass=_id("pass2");
+  var pass2=_id("pass2_1");
+  var user2=_id("user2");
+  
+  
+  if(user2.value == "") {
+    user2.focus();
+	showError("введите адрес электронной почты", diverror_3);
+	user2.style.border="1px solid red";
+	return;
+  }
+  if(!user2.value.match(/@/)) {
+    user2.focus();
+	showError("не правельный адрес электронной почты",diverror_3);
+	user2.style.border="1px solid red";
+	return;
+  }
+//--логин ввидет правильно//			
+  if(pass.value == "") {
+    pass.focus();
+	resetBorders();
+	return;
+  }
+  if(pass2.value == "") {
+    pass2.focus();
+	resetBorders();
+	return;	
+  }
+  if(pass2.value!=pass.value) {
+    pass.focus();
+	showError("пароли не совпадают",diverror_4);
+	pass2.style.border="1px solid red";
+	pass.style.border="1px solid red";
+	return;
+  }
+  else {
+	  
+  var url="/register.php?user="+user2.value+"&pwd="+pass2.value +"&action=register";
+  load_async(url,function(data){
+	  
+    var x=eval('('+data+')'); 
+	$("#user2,#pass2,#pass2_1").val('');
+	}); 
+  resetBorders();
+  hiddenOrVisibleDiv();
+  $("#user").val(user2.value);
+  $("#pass").val(pass2.value);
+  
+ }
+}
+
+var divChangeDisplay=true;
+function foggotPass() {
+	//показать окно для отправки мыла чтобы получить  забытый пароль
+
+  var divError_5=_id("divError_5");
+  var input=document.getElementById("inputMail");
+  
+  var divChange=_id("div-change-mail");
+  divChange.style.display="none";
+  
+  hideError();
+  //hidePassAndMail_2();
+   
+  if(divChangeDisplay) {
+	 $( "#divLogin" ).hide( "blind",1000);
+	 $( "#foggot-password" ).show( "blind",1000 );
+    //divLogin.style.display="none";
+	//divFoggotPass.style.display="block";
+  }
+  else {
+	   $( "#foggot-password" ).hide( "blind",1000 );
+	   $( "#divLogin" ).show( "blind",1000);
+	  //divLogin.style.display="block";
+	  //divFoggotPass.style.display="none";	
+  }
+  divChangeDisplay=!divChangeDisplay;
+  input.value="";
+  divError_5.innerHTML="";
+  resetBorders();	
+}
+function send() {
+	
+	var inputMail=document.getElementById("inputMail");
+	var divFoggot_1=document.getElementById("foggot-password");
+	var divFoggot_2=document.getElementById("foggot-password-2");
+	var diverror_5=_id("divError_5");
+	if(inputMail.value == "" ) {
+	  showError("введите адрес электронной почты", diverror_5);
+	  inputMail.style.border="1px solid red";
+	  return;
+	}
+    if(!inputMail.value.match(/@/)) {
+  	showError("не правельный адрес электронной почты",diverror_5);
+  	inputMail.style.border="1px solid red";
+  	return;
+    }
+	// var divH=document.createElement("h1");
+// 	var button=document.createElement("button");
+    var url="/send_user_pwd.php?email="+inputMail.value;
+  
+    load_async(url,function(data){
+		var x=eval('('+data+')');
+		
+	    if(x.result == true) {
+			//все ок на почту отправлен пароль
+		  $( "#foggot-password" ).hide( "blind" );
+		  $( "#foggot-password-2" ).show("blind");
+	    }
+		else {
+		showError( inputMail.value + " не зарегистрированный почтовый ардес ",diverror_5);	
+		}
+	});
+	resetBorders();
+}
+function rememberMe() {
+	var user=document.getElementById("user");
+	var pass=document.getElementById("pass");
+	var obj="account=({'e':'"+user.value+"','p':'"+pass.value+"'})";
+	document.cookie=obj;
+	
+	//alert(result);
+
+}
+
+function fillLoginAndPass() {
+  var result=getCookie("account");
+  if(!result) {
+    return;
+  }
+  var user=document.getElementById("user");
+  var pass=document.getElementById("pass");
+  var x=eval(result);
+  user.value=x.e;
+  pass.value=x.p;	
+}
+
+function getCookie(name) {
+  var matches = document.cookie.match(new RegExp(
+    "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+  ));
+  return matches ? decodeURIComponent(matches[1]) : undefined;
+}
+	
+	
+
+function backToMenu () {
+ $( "#foggot-password-2" ).hide( "blind");
+ divChangeDisplay=!divChangeDisplay;
+ $( "#divLogin" ).show("blind",1000);
+}
+
+	</script>           
+    </head>
+<body  onload="fillLoginAndPass()">
+	<!--
+	                   header
+-->
+	<div id="top_div">
+	  <h5 id="my-list-caption">Мои Списки </h5>
+	</div>
+	<!--
+		              content
+-->
+  <div id="midle_div">
+   <!-- <div id="diverror">
+    </div>
+	   -->
+	<div class="container-fluid" id="mine">
+		
+	</div>
+		<!--
+		          Login
+		 -->
+    <div id="divLogin">   
+	  <div>
+	    <h2>Вход</h2>
+	  </div>
+	  <div id="containerLogin_1">
+	    <input type="email" name="Email" size="24" placeholder="Эл.почта"  id="user" value="demo@mail.com"/>		 
+	    </div>
+		<div class="divError" id="divError_1">
+		</div>
+	  <div>
+	    <input type="password" size="24"   placeholder="пароль"  id="pass" value="demo">
+		<div  class="divError" id="divError_2">
+		</div>
+	  </div>
+	  <div> 
+		  <span  onclick="foggotPass()";  id="divSpan">
+		   Забыли пароль?</span>
+	  </div> 
+	  <div  id="containerLogin_2">
+	    <button onclick="reg();"  id="button-enter" class="ser-btn-succes ser-btn-lg"  >войти</button>
+	  </div>	
+       <div  id="containerLogin_3">
+	     <label onclick="rememberMe();" id="labelLogin">
+  	       <input  id="inputLabel"  type="checkbox">
+		   <span  id="spanLabel_1">Запомнить меня</span>
+		 </label>
+		 <span  onclick="hiddenOrVisibleDiv()" id="spanLabel_2"> Регистрация</span>
+		 
+      </div>
+   </div>
+   <div id="div-change-mail">
+     <p  id="p_change_1">не правильный адрес эл.почты или пароль</p>
+     <p id="p_change_2">Возможно, включен CapsLock или неверно выбран язык ввода.</p>
+   </div>
+   <div id="foggot-password">
+   	<h2>
+	 Забыли пароль?
+	</h2>		   
+     <form>
+		 <div id="containerFoggot">
+	       <input type="text" id="inputMail"  placeholder="ваша эл.почта"/>
+	     </div>
+	 	<div class="divError" id="divError_5">
+	 	</div>
+		 <div>
+		 <input type="sumbit" id="buttonSumbit"  value="продолжить" onclick="send();" class="ser-btn-succes ser-btn-lg"/>
+		 или
+		 <span onclick="foggotPass()" id="spanFoggot"> отменить</span>
+	 </div>
+	 </form>	   	    
+   </div>
+   <div  id="foggot-password-2">
+     <h2>
+		 Спасибо,проверьте вашу почту
+	</h2>
+	<button  class="ser-btn-succes ser-btn-lg" id="back" onclick="backToMenu();">
+		назад
+	</button>		 	   
+   </div>	       
+	<!--
+	          divRegistration
+	 -->
+  <div id="divRegistration">
+    <div class="div-rg">
+	  <h2  id="hRegistration">Регистрация</h2>
+	</div>
+	<div class="div-rg">
+	  <input type="email" name="Email"    placeholder="Эл.почта"  id="user2"/>
+	</div>
+	<div class="divError" id="divError_3">
+	</div>	
+	<div class="div-rg">
+      <input type="password" placeholder="пароль" id="pass2"/>
+	</div>
+	<div class="div-rg">
+	  <input type="password"placeholder="пороль(повторно)"  id="pass2_1"/>
+	</div>
+	<div class="divError" id="divError_4">
+	</div>
+	<div class="div-rg">
+      <button  onclick="checkPassAndEmail()" class="ser-btn-succes ser-btn-lg">готово</button>
+    </div>
+	<div class="div-rg">
+	  <button  onclick="hiddenOrVisibleDiv()" class="ser-btn-succes ser-btn-lg">отмена</button>
+	</div>	
+  </div>	  
+</div>
+	<!--
+		              footer 
+	-->
+	<div  id="button_div"> 
+	  developed by Sidorov.S 2015.
+	</div>
+	
+     <!-- modal-div
+		 -->		       <div class="modal-sergey" id="modalDiv">     
+                 <div class="content-sergey" id="modalContent">
+                   <div class="modal-hd">
+					
+                     <button  class="myclose" onclick="toggleModal()">
+					   <span class="fa fa-times" style="font-size: smaller"> </span>
+				     </button>
+				   
+                     <h3 class="sergey-title" id="sergey-head" style="text-align: center">результат</h3>
+                   </div>      
+                   <div class="sergey-body" id="sbody">
+                   </div>
+                   <div class="modal-bottom"> 
+                     <button  class="ser-btn-succes ser-btn-lg"             
+					  
+					  onclick="toggleModal()"> close
+				    </button>
+                   </div>
+                 </div>
+               </div>
+
+           </body>
+</html>

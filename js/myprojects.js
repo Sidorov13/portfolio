@@ -80,8 +80,11 @@ function populate_portfolio() {
 		async:true
 	 })
 	.done(function(data){
-
-		var d=$.parseJSON(data);
+		var d=data;
+        if (typeof data === 'string' || data instanceof String) {
+        	d=$.parseJSON(data);
+        }
+		//d=$.parseJSON(data);
 		stack=[];
 		show_pages(d);
 		sr_slide();

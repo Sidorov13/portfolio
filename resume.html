@@ -32,8 +32,12 @@ function populate_resume() {
 		async:true
 	 })
 	.done(function(data){
-        console.log("done");	
-		var d=$.parseJSON(data);
+        console.log("done");
+		var d=data;
+        if (typeof data === 'string' || data instanceof String) {
+        	d=$.parseJSON(data);
+        }	
+		//var d=$.parseJSON(data);
 		var s="";
         var count=0;
 		for(var i = 0 ; i < d.length ; i ++ ) {

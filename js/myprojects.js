@@ -15,57 +15,31 @@ $("#main").click(function() {
 
   })
 $("#portfolio").click(function() {
-  load_content("portfolio.html");
-  //animation();	
+  load_content("portfolio.html");	
 
   }) 
   
 });
 var is_first_time=true;
-var toggle=true;
-var toggle2=true;
-function load_content(content) {
+function load_content(content,caption) {
 	if(state.page ==  content) {
 		return;
 	}	
     state.page = content;
 	storesave();
-	//$("#box_midle").empty();
-	//$("#box_midle_2").empty();
-	// if(toggle) {
-	//       $("#box_midle").hide("slide",{ direction: "left" },1000);
-	// $("#box_midle_2").empty();
-	//
-	//     }
-	// else {
-	//  $("#box_midle_2").hide("slide",{ direction: "left" },1000);
-	//   $("#box_midle").empty();
-	//
-	// }
-	//toggle=!toggle;
+	
+	$("#box_midle").empty();
+	$("#box_midle").hide("slide");
+	
   $.ajax({
-    url: content  + '?tm='+ new Date().getTime()
-	  
+    url: content
 	})
   .done(function( data ) {
 	   is_first_time=true;
-	   
-	     if(toggle2) {
-          $("#box_midle_2").html(data);
- // 	     $("#box_midle").hide("slide",{ direction: "left" },1000);
- // 		 //$("#box_midle_2").show("slide",{ direction: "right" },1000);
-        }
-  	   else {
- 	     $("#box_midle").html(data);
- // 		 $("#box_midle_2").hide("slide",{ direction: "left" },1000);
- // 		 //$("#box_midle").show("slide",{ direction: "right" },1000);
- //
- 	   }
-  	    //toggle2=!toggle2;
-		
-	   // if(content != "portfolio.html" ) {
-  // 		 animation();
-  // 	   }
+       $("#box_midle").html(data);
+	   if(content != "portfolio.html" ) {
+		 animation();
+	   }
 	  
       });
 	  //animation(); 	
@@ -87,111 +61,14 @@ function populate_portfolio() {
 		//d=$.parseJSON(data);
 		stack=[];
 		show_pages(d);
-		sr_slide();
+		//sr_slide();
 	});
 }
 var  toggle3=true;
 
-function sr_slide() {
-   if(toggle2) {
-      //$("#box_midle_2").html(data);
-     $("#box_midle").hide("slide",{ direction: "left" },1000).addClass("pull-left");
-	 $("#box_midle_2").show("slide",{ direction: "right" },1000).addClass("pull-righ");
-	
-	 //$("#box_midle_2").show("slide",{ direction: "right" },1000);
-    }
-   else {
-     //$("#box_midle").html(data);
-	 $("#box_midle_2").hide("slide",{ direction: "left" },1000);
-	  $("#box_midle").show("slide",{ direction: "right" },1000);
-	 //$("#box_midle").show("slide",{ direction: "right" },1000);
-
-   }
-    toggle2=!toggle2;
-
+function animation() {
+  $("#box_midle").show("slide"); 
 }
-function sr_slide4() {
-	var counter=0;
-	var w=0;
-	var tm=setInterval (function () {
-		counter++;
-		if(counter == 40) {
-			clearInterval(tm);
-			console.log("work");
-			tm=null;
-			$("#" +(toggle2?"box_midle_2":"box_midle")).css("left","100%");
-			$("#" +(toggle2?"box_midle_2":"box_midle")).css("display","none");
-		
-			//$("#" +(toggle2?"box_midle":"box_midle_2")).css("display","block");
-   		  	//$("#" + (toggle2?"box_midle":"box_midle_2")).css("float","left");
-			toggle2=!toggle2;
-			return;
-		} 
-	  
-	  w-=2;
-	  $("#"+ (toggle2?"box_midle_2":"box_midle")).css("left", w + "%");
-	  $("#" + (toggle2?"box_midle":"box_midle_2")).css("left", ( 80+w ) + "%");
-	},10);
-	
-}
-// function sr_slide() {
-// 	var counter=0;
-// 	var w=100;
-// 	var tm=setInterval (function () {
-// 		counter++;
-// 		if(counter == 52) {
-// 			clearInterval(tm);
-// 			tm=null;
-// 			 $("#" +(toggle?"box_midle_2":"box_midle")).css("float","right");
-//  			$("#" + (toggle?"box_midle":"box_midle_2")).css("float","left");
-// 			toggle=!toggle;
-// 			toggle2=!toggle2;
-// 			return;
-// 		}
-//
-// 	  w-=2;
-// 	  $("#"+ (toggle?"box_midle_2":"box_midle")).css("width", w + "%");
-// 	  $("#" + (toggle?"box_midle":"box_midle_2")).css("width", ( 100-w ) + "%");
-// 	},10);
-//
-// }
-// function sr_slide() {
-//    if(toggle2) {
-//
-//      $("#box_midle_2").effect( "size", {
-// 		 to: { width: "0%"},origin: [ "50%","50%"]
-//   }, 1000 );
-// }
-// // 	 $("#box_midle_2").show("slide",{ direction: "right" },1000);
-// // 	 //$("#box_midle_2").show("slide",{ direction: "right" },1000);
-// //     }
-//    else {
-// 	   $("#box_midle").effect( "size", {
-// 	  to: { width: "100%",}
-// 	}, 1000 );
-//
-// // 	 $("#box_midle_2").hide("slide",{ direction: "left" },1000);
-// // 	  $("#box_midle").show("slide",{ direction: "right" },1000);
-// // 	 //$("#box_midle").show("slide",{ direction: "right" },1000);
-// //
-//     }
-//      toggle2=!toggle2;
-// //
-//  }
-
-// function animation() {
-// 	if(toggle3) {
-//
-//       $("#box_midle_2").show("slide",{ direction: "right" },1000);
-//
-//   }
-//   else  {
-//
-//   	 $("#box_midle").show("slide",{ direction: "right" },1000);
-//
-//   }
-//    toggle3=!toggle3;
-// }
 
 function show_parent_pages() {
   var d=stack.pop();
@@ -205,10 +82,10 @@ var first_page=true;
 function show_pages(d){
 
    	  $("#container_portfolio").empty();
-   // if(!is_first_time) {
-//      $("#container_portfolio").hide("slide",{ direction: "left" },300);
-//
-//    }
+   if(!is_first_time) {
+     $("#container_portfolio").hide("slide");
+
+   }
 	var s="";
 	var dv;
 	for(var i = 0 ; i < d.length ; i ++ ) {
@@ -223,15 +100,15 @@ function show_pages(d){
 		+'"><div> <img src="'+d[i].image+
 	    '"id="image_portfolio"/></div><div '+'class="title_portfolio"><h4>'+d[i].title+'</h4> <h5 id="title_portfolio'+i+'">'+d[i].link+'</h5></div></div>';
 		$(dv).append(s);
-		// $("#container_portfolio").show("slide");
-		 // if(is_first_time) {
-	 // 			 //sr_slide();
-	 // 		 is_first_time=false;
-	 //
-	 // 		}
-	 // 		else {
-	 //  $("#container_portfolio").show("slide",{ direction: "right" },300);
-	 // }
+		//$("#container_portfolio").show("slide");
+		 if(is_first_time) {
+	 		 animation();	 //sr_slide();
+	 		 is_first_time=false;
+
+	 		}
+	 		else {
+	          $("#container_portfolio").show("slide");
+	 }
 		 
 		if(d[i].pages) {
 		  $('#title_portfolio'+ i).prop('pages',d[i].pages);

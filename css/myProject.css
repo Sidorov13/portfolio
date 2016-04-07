@@ -5,7 +5,7 @@ html {
 }
 
 body {
-/*background-color:#FCFFCD;*/
+  background-color:#F5F5DC;
   margin-bottom: 80px;
   
  
@@ -48,9 +48,10 @@ width: 100%;
  
 }
 .col_container_contacts {
-	background-color:#C6BFD4;
+	background-color:#3e4e5e;
 	padding:2%;
 	margin:2%;
+	color:white;
 }
 a:hover {
 	 
@@ -61,7 +62,7 @@ a:hover {
 .col_my_skills {
 	font-size:25px;
 	background-color:#FFDA2F;
-	border: solid 0.3em black;
+    border: solid 2px black;
 	margin:10px;
 	
 }
@@ -83,7 +84,7 @@ border-left: solid 0.3em #FFDA2F;
 border-left: solid  #3e4e5e 0.1em;	
 }
 #data{
-    background-color: #FFBBBB;
+    background-color: #FFDA2F;
     width: 92px;
     height: 88px;
     border-radius: 48px;
@@ -91,14 +92,16 @@ border-left: solid  #3e4e5e 0.1em;
     padding: 2em;
     font-size: 9px;
 	margin-top: 3em;
+	border: 2px solid black;
 }
 #info{
-	background-color:#DEDDE2;
+	background-color:#3e4e5e;
 	margin:10px;
-	border:solid #E5BB33 2px;
+	border:solid white 2px;
+	color: white;
 }
 .prof{ 
-	color:#CC9424;
+	/*color:#CC9424;*/
 }
 #box_midle {
 

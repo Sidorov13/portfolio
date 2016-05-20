@@ -24,6 +24,7 @@ var is_first_time=true;
 function load_content(content,caption) {
 	if(state.page ==  content) {
 		return;
+		
 	}	
     state.page = content;
 	storesave();

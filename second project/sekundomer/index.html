@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>sekundomer</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		  <script src="jquery.min.js"></script>
+						
+  </head>
+<body>
+<!-- /*<style>
+#my_div {
+	position:relative;
+}
+</style>*/ -->
+<div id="my_div">
+</div>	
+<button id="start_stop" >start</button>
+<button id="refresh"> reset</button>
+
+</body>
+<script>
+var timer;
+var toggle=true;
+// var str2="00:00:000";
+$("#my_div").html("00:00:000");
+var str="";
+  var b="";
+  var mili_sec=0;
+  var sec=0;
+  var min=0;
+  var zero =0;
+function start_and_stop() {
+  // var mili_sec=document.getElementById("miliseconds");
+  // mili_sec=parseInt(mili_sec.value);
+  // var sec=document.getElementById("seconds");
+  // sec=parseInt(sec.value);
+  //var min=document.getElementById("minutes");
+  // min=parseInt(min.value);
+  var div=document.getElementById("my_div");
+  $("#start_stop").html("stop");
+  if(!toggle) {
+    clearInterval(timer);
+	toggle=!toggle;
+	 $("#start_stop").html("start");
+    return;	
+  }
+   toggle=!toggle;  
+   timer= setInterval( function () {
+	  
+	mili_sec+=10;
+	
+	str=(( min < 10 ) ? zero = "0" : zero = "" ) + min + ":"  +  (( sec < 10 ) ? zero = "0" : zero = "" ) +sec+ ":" + (( mili_sec < 100 ) ? zero = 0 : zero = "" ) + mili_sec ;
+
+	if(mili_sec == 1000 ) {
+	    sec++;
+		mili_sec=0;
+		if(sec == 60) {
+			min++;
+			sec=0;
+			if(min == 60) {
+			  clearInterval(timer);
+			  timer = null;
+			}
+
+		}
+	}
+$("#my_div").html(str);	
+},10)
+		
+}
+function start_and_stop2() {
+  var mili_sec=document.getElementById("miliseconds");
+  var sec=document.getElementById("seconds");
+  var min=document.getElementById("minutes");
+  var div=document.getElementById("my_div");
+  
+  $("#start_stop").html("stop");
+  if(!toggle) {
+    clearInterval(timer);
+	toggle=!toggle;
+	 $("#start_stop").html("start");	
+    return;	
+  }
+   toggle=!toggle;  
+   timer= setInterval( function () { 
+	mili_sec.value++;
+	if(mili_sec.value == 99 ) {
+		sec.value++;
+		$("#miliseconds").val("00");
+		if(sec.value == 59) {
+			min.value++;
+			$("#seconds").val("00");
+			if(min.value == 59) {
+			  clearInterval(timer);
+			  timer = null;
+			}
+
+		}
+	}
+},10)		
+}
+function reset() {
+$("#my_div").html("00:00:000");
+$("#start_stop").html("start");
+  clearInterval(timer);
+}
+$(document).ready(function () {
+  $("#start_stop").click( function () {
+	start_and_stop();
+  })
+  $("#refresh").click(function () {
+	reset();	
+  })
+})
+</script>
